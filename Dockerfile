@@ -40,7 +40,7 @@ ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 RUN echo "Downloading Github CLI."
 
 RUN apt-get -y install git-core
-ARG TOKEN=0d0af61f47f9ffed70773fa35fb798c5f61da617
+ENV TOKEN=$GIT_TOKEN
 RUN git config --global url.https://${TOKEN}:@github.com/.insteadOf https://github.com/
 RUN mkdir /home/project
 
